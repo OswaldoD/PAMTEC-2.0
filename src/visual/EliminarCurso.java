@@ -39,10 +39,14 @@ public class EliminarCurso extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         lblFondo = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        Matricular1 = new javax.swing.JMenu();
+        itmInicio1 = new javax.swing.JMenuItem();
+        itmSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 51));
-        setPreferredSize(new java.awt.Dimension(256, 216));
+        setPreferredSize(new java.awt.Dimension(256, 261));
         getContentPane().setLayout(null);
 
         jLabel2.setText("Código:");
@@ -85,6 +89,46 @@ public class EliminarCurso extends javax.swing.JFrame {
         getContentPane().add(lblFondo);
         lblFondo.setBounds(0, 0, 260, 450);
 
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(49, 25));
+
+        Matricular1.setText("Archivo");
+        Matricular1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Matricular1ActionPerformed(evt);
+            }
+        });
+
+        itmInicio1.setText("Menú Principal");
+        itmInicio1.setActionCommand("");
+        itmInicio1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmInicio1MouseClicked(evt);
+            }
+        });
+        itmInicio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmInicio1ActionPerformed(evt);
+            }
+        });
+        Matricular1.add(itmInicio1);
+
+        itmSalir.setText("Salir");
+        itmSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmSalirMouseClicked(evt);
+            }
+        });
+        itmSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmSalirActionPerformed(evt);
+            }
+        });
+        Matricular1.add(itmSalir);
+
+        jMenuBar1.add(Matricular1);
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -103,6 +147,35 @@ public class EliminarCurso extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El curso fue eliminado");
         }
     }//GEN-LAST:event_EliminarBotonActionPerformed
+
+    private void itmInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmInicio1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmInicio1MouseClicked
+
+    private void itmInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmInicio1ActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+
+        dispose();
+    }//GEN-LAST:event_itmInicio1ActionPerformed
+
+    private void itmSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmSalirMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmSalirMouseClicked
+
+    private void itmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_itmSalirActionPerformed
+
+    private void Matricular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Matricular1ActionPerformed
+        // TODO add your handling code here:
+
+        Matricular matricular = new Matricular();
+        matricular.setVisible(true);
+        System.out.println("estoy aquí");
+    }//GEN-LAST:event_Matricular1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,9 +214,13 @@ public class EliminarCurso extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EliminarBoton;
+    private javax.swing.JMenu Matricular1;
     private javax.swing.JTextPane codigoCursoPanelTexto;
+    private javax.swing.JMenuItem itmInicio1;
+    private javax.swing.JMenuItem itmSalir;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;

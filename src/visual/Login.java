@@ -119,7 +119,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(lblFondo);
         lblFondo.setBounds(0, 0, 740, 580);
         getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(570, 470, 50, 10);
+        jSeparator2.setBounds(570, 470, 0, 2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

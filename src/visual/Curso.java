@@ -98,7 +98,7 @@ public class Curso extends javax.swing.JFrame {
         getContentPane().add(lblFondo);
         lblFondo.setBounds(0, -60, 740, 620);
         getContentPane().add(jSeparator2);
-        jSeparator2.setBounds(0, 0, 50, 10);
+        jSeparator2.setBounds(0, 0, 0, 2);
 
         jMenuBar.setPreferredSize(new java.awt.Dimension(49, 25));
 

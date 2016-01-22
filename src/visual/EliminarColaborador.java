@@ -35,17 +35,22 @@ public class EliminarColaborador extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         lblFondo = new javax.swing.JLabel();
+        jMenuBar = new javax.swing.JMenuBar();
+        Matricular = new javax.swing.JMenu();
+        itmInicio = new javax.swing.JMenuItem();
+        itmSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 51));
-        setPreferredSize(new java.awt.Dimension(280, 220));
+        setPreferredSize(new java.awt.Dimension(280, 235));
         getContentPane().setLayout(null);
 
         jLabel2.setText("Colaborador:");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(40, 70, 190, 14);
 
-        listaColaboradorComboBox.setModel(new javax.swing.DefaultComboBoxModel(colaboradores));
+        listaColaboradorComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jean Carlo Alfaro Campos", "Daniela Solís Calderón", "Melvin Orozco Aguilar" }));
+        listaColaboradorComboBox.setToolTipText("");
         listaColaboradorComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listaColaboradorComboBoxActionPerformed(evt);
@@ -77,17 +82,88 @@ public class EliminarColaborador extends javax.swing.JFrame {
         getContentPane().add(lblFondo);
         lblFondo.setBounds(0, 0, 400, 420);
 
+        jMenuBar.setPreferredSize(new java.awt.Dimension(49, 25));
+
+        Matricular.setText("Archivo");
+        Matricular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MatricularActionPerformed(evt);
+            }
+        });
+
+        itmInicio.setText("Menú Principal");
+        itmInicio.setActionCommand("");
+        itmInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmInicioMouseClicked(evt);
+            }
+        });
+        itmInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmInicioActionPerformed(evt);
+            }
+        });
+        Matricular.add(itmInicio);
+
+        itmSalir.setText("Salir");
+        itmSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmSalirMouseClicked(evt);
+            }
+        });
+        itmSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmSalirActionPerformed(evt);
+            }
+        });
+        Matricular.add(itmSalir);
+
+        jMenuBar.add(Matricular);
+
+        setJMenuBar(jMenuBar);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    public static String seleccionado;
+    
     private void EliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarBotonActionPerformed
         // TODO add your handling code here:
-        
+        listaColaboradorComboBox.removeItem(seleccionado);        
     }//GEN-LAST:event_EliminarBotonActionPerformed
 
     private void listaColaboradorComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaColaboradorComboBoxActionPerformed
         // TODO add your handling code here:
+        seleccionado=(String) listaColaboradorComboBox.getSelectedItem();
     }//GEN-LAST:event_listaColaboradorComboBoxActionPerformed
+
+    private void itmInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmInicioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmInicioMouseClicked
+
+    private void itmInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmInicioActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+
+        dispose();
+    }//GEN-LAST:event_itmInicioActionPerformed
+
+    private void itmSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmSalirMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmSalirMouseClicked
+
+    private void itmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_itmSalirActionPerformed
+
+    private void MatricularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MatricularActionPerformed
+        // TODO add your handling code here:
+
+        Matricular matricular = new Matricular();
+        matricular.setVisible(true);
+        System.out.println("estoy aquí");
+    }//GEN-LAST:event_MatricularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,7 +208,11 @@ public class EliminarColaborador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EliminarBoton;
+    private javax.swing.JMenu Matricular;
+    private javax.swing.JMenuItem itmInicio;
+    private javax.swing.JMenuItem itmSalir;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblTitulo;

@@ -56,17 +56,20 @@ public class Matricular extends javax.swing.JFrame {
         btnMatricualar = new javax.swing.JButton();
         btnOpcionesAvanzadas = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        btnInicio = new javax.swing.JButton();
         lblCursoDisponible = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         ComboBoxEstudiantes = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         lblMatricular = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        Matricular1 = new javax.swing.JMenu();
+        itmInicio1 = new javax.swing.JMenuItem();
+        itmSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Matricular Estudiante");
-        setPreferredSize(new java.awt.Dimension(743, 478));
+        setPreferredSize(new java.awt.Dimension(743, 523));
         getContentPane().setLayout(null);
 
         lblNombre.setText("Primer Apellido");
@@ -191,20 +194,6 @@ public class Matricular extends javax.swing.JFrame {
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(0, 118, 740, 2);
 
-        btnInicio.setText("Inicio");
-        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnInicioMouseClicked(evt);
-            }
-        });
-        btnInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicioActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnInicio);
-        btnInicio.setBounds(640, 400, 73, 23);
-
         lblCursoDisponible.setText("Cursos Disponibles");
         getContentPane().add(lblCursoDisponible);
         lblCursoDisponible.setBounds(530, 230, 180, 14);
@@ -252,6 +241,46 @@ public class Matricular extends javax.swing.JFrame {
         lblMatricular.setText("jLabel4");
         getContentPane().add(lblMatricular);
         lblMatricular.setBounds(0, -70, 740, 660);
+
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(49, 25));
+
+        Matricular1.setText("Archivo");
+        Matricular1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Matricular1ActionPerformed(evt);
+            }
+        });
+
+        itmInicio1.setText("Menú Principal");
+        itmInicio1.setActionCommand("");
+        itmInicio1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmInicio1MouseClicked(evt);
+            }
+        });
+        itmInicio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmInicio1ActionPerformed(evt);
+            }
+        });
+        Matricular1.add(itmInicio1);
+
+        itmSalir.setText("Salir");
+        itmSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmSalirMouseClicked(evt);
+            }
+        });
+        itmSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmSalirActionPerformed(evt);
+            }
+        });
+        Matricular1.add(itmSalir);
+
+        jMenuBar1.add(Matricular1);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -330,19 +359,6 @@ public class Matricular extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnMatricualarActionPerformed
 
-    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInicioActionPerformed
-
-    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
-        // TODO add your handling code here:
-        
-        Menu menu = new Menu();
-        menu.setVisible(true);
-        dispose();
-        
-    }//GEN-LAST:event_btnInicioMouseClicked
-
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
@@ -393,6 +409,35 @@ public class Matricular extends javax.swing.JFrame {
 
     }//GEN-LAST:event_ComboBoxEstudiantesMousePressed
 
+    private void itmInicio1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmInicio1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmInicio1MouseClicked
+
+    private void itmInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmInicio1ActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+
+        dispose();
+    }//GEN-LAST:event_itmInicio1ActionPerformed
+
+    private void itmSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmSalirMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmSalirMouseClicked
+
+    private void itmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_itmSalirActionPerformed
+
+    private void Matricular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Matricular1ActionPerformed
+        // TODO add your handling code here:
+
+        Matricular matricular = new Matricular();
+        matricular.setVisible(true);
+        System.out.println("estoy aquí");
+    }//GEN-LAST:event_Matricular1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -433,12 +478,15 @@ public class Matricular extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxEstudiantes;
-    private javax.swing.JButton btnInicio;
+    private javax.swing.JMenu Matricular1;
     private javax.swing.JButton btnMatricualar;
     private javax.swing.JButton btnOpcionesAvanzadas;
+    private javax.swing.JMenuItem itmInicio1;
+    private javax.swing.JMenuItem itmSalir;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblApellido1;
     private javax.swing.JLabel lblApellido2;

@@ -5,6 +5,9 @@
  */
 package visual;
 
+import controlador.validaciones;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sephi
@@ -38,27 +41,27 @@ public class CrearCurso extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         cupoPanelTexto = new javax.swing.JTextPane();
         jScrollPane8 = new javax.swing.JScrollPane();
-        asistente2CorreoPanelTexto = new javax.swing.JTextPane();
+        asistente2 = new javax.swing.JTextPane();
         jScrollPane9 = new javax.swing.JScrollPane();
-        asistenteCorreoPanelTexto = new javax.swing.JTextPane();
+        asistente1 = new javax.swing.JTextPane();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        profesorCorreoPanelTexto = new javax.swing.JTextPane();
+        profesor = new javax.swing.JTextPane();
         jScrollPane2 = new javax.swing.JScrollPane();
-        nombreCursoPanelTexto = new javax.swing.JTextPane();
+        nombreCurso = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        descripcionCursoPanelTexto = new javax.swing.JTextArea();
+        descripcion = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         BuscarCursoComboBox = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         Archivo = new javax.swing.JMenu();
         itmInicio = new javax.swing.JMenuItem();
@@ -101,12 +104,12 @@ public class CrearCurso extends javax.swing.JFrame {
         getContentPane().add(jScrollPane5);
         jScrollPane5.setBounds(140, 190, 50, 30);
 
-        jScrollPane8.setViewportView(asistente2CorreoPanelTexto);
+        jScrollPane8.setViewportView(asistente2);
 
         getContentPane().add(jScrollPane8);
         jScrollPane8.setBounds(310, 260, 373, 30);
 
-        jScrollPane9.setViewportView(asistenteCorreoPanelTexto);
+        jScrollPane9.setViewportView(asistente1);
 
         getContentPane().add(jScrollPane9);
         jScrollPane9.setBounds(310, 220, 373, 30);
@@ -131,12 +134,12 @@ public class CrearCurso extends javax.swing.JFrame {
         getContentPane().add(jLabel10);
         jLabel10.setBounds(90, 200, 70, 14);
 
-        jScrollPane7.setViewportView(profesorCorreoPanelTexto);
+        jScrollPane7.setViewportView(profesor);
 
         getContentPane().add(jScrollPane7);
         jScrollPane7.setBounds(312, 177, 373, 30);
 
-        jScrollPane2.setViewportView(nombreCursoPanelTexto);
+        jScrollPane2.setViewportView(nombreCurso);
 
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(230, 110, 428, 30);
@@ -145,9 +148,9 @@ public class CrearCurso extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(240, 90, 200, 14);
 
-        descripcionCursoPanelTexto.setColumns(20);
-        descripcionCursoPanelTexto.setRows(5);
-        jScrollPane6.setViewportView(descripcionCursoPanelTexto);
+        descripcion.setColumns(20);
+        descripcion.setRows(5);
+        jScrollPane6.setViewportView(descripcion);
 
         getContentPane().add(jScrollPane6);
         jScrollPane6.setBounds(70, 310, 617, 120);
@@ -177,11 +180,11 @@ public class CrearCurso extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(70, 290, 110, 14);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.jpg"))); // NOI18N
-        jLabel11.setText("jLabel11");
-        jLabel11.setPreferredSize(new java.awt.Dimension(759, 553));
-        getContentPane().add(jLabel11);
-        jLabel11.setBounds(0, 0, 740, 550);
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.jpg"))); // NOI18N
+        lblFondo.setText("jLabel11");
+        lblFondo.setPreferredSize(new java.awt.Dimension(759, 553));
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(0, 0, 740, 550);
 
         Archivo.setText("Archivo");
 
@@ -210,10 +213,35 @@ public class CrearCurso extends javax.swing.JFrame {
 
     private void GuardarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarBotonActionPerformed
         // TODO add your handling code here:
+        
+        validaciones validar = new validaciones();
+        
+        //Mediante este ciclo se valida que no existan campos te texto vacíos
+        if(validar.esVacio(CodigoCursoPanelTexto.getText())==true || validar.esVacio(nombreCurso.getText())==true || 
+                         validar.esVacio(numeroGrupoPanelTexto.getText())==true || validar.esVacio(cupoPanelTexto.getText())==true || 
+                         validar.esVacio(profesor.getText())==true || validar.esVacio(asistente1.getText())==true || 
+                         validar.esVacio(asistente2.getText())==true || validar.esVacio(descripcion.getText())==true ){
+            
+            JOptionPane.showMessageDialog(this, "Debe completar todos los campos solicitados");            
+        }
+        else{              
+                CodigoCursoPanelTexto.setText(" ");
+                nombreCurso.setText(" ");
+                numeroGrupoPanelTexto.setText(" ");
+                cupoPanelTexto.setText(" ");
+                profesor.setText(" ");
+                asistente1.setText(" ");
+                asistente2.setText(" ");
+                descripcion.setText(" ");
+                JOptionPane.showMessageDialog(this, "El curso se registro con éxito");                            
+        }
     }//GEN-LAST:event_GuardarBotonActionPerformed
 
     private void OpcionesAvanzadasBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpcionesAvanzadasBotonActionPerformed
         // TODO add your handling code here:
+        EliminarCurso eliminarCurso = new EliminarCurso();
+        eliminarCurso.setVisible(true);
+        dispose();
     }//GEN-LAST:event_OpcionesAvanzadasBotonActionPerformed
 
     private void BuscarCursoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarCursoComboBoxActionPerformed
@@ -275,15 +303,14 @@ public class CrearCurso extends javax.swing.JFrame {
     private javax.swing.JTextPane CodigoCursoPanelTexto;
     private javax.swing.JButton GuardarBoton;
     private javax.swing.JButton OpcionesAvanzadasBoton;
-    private javax.swing.JTextPane asistente2CorreoPanelTexto;
-    private javax.swing.JTextPane asistenteCorreoPanelTexto;
+    private javax.swing.JTextPane asistente1;
+    private javax.swing.JTextPane asistente2;
     private javax.swing.JTextPane cupoPanelTexto;
-    private javax.swing.JTextArea descripcionCursoPanelTexto;
+    private javax.swing.JTextArea descripcion;
     private javax.swing.JMenuItem itmInicio;
     private javax.swing.JMenuItem itmSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -301,8 +328,9 @@ public class CrearCurso extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextPane nombreCursoPanelTexto;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JTextPane nombreCurso;
     private javax.swing.JTextPane numeroGrupoPanelTexto;
-    private javax.swing.JTextPane profesorCorreoPanelTexto;
+    private javax.swing.JTextPane profesor;
     // End of variables declaration//GEN-END:variables
 }

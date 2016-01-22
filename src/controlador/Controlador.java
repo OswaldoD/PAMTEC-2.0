@@ -28,8 +28,6 @@ public class Controlador {
     public ArrayList<String> listarColaboradores(){
         //llamar al metodo y devolver
         ArrayList<String> arregloColaboradores = new ArrayList<String>();
-        arregloColaboradores.add("e");
-        arregloColaboradores.add("f");
         return arregloColaboradores;
     }
     

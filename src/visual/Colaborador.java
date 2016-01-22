@@ -57,11 +57,15 @@ public class Colaborador extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
+        jMenuBar = new javax.swing.JMenuBar();
+        Matricular = new javax.swing.JMenu();
+        itmInicio = new javax.swing.JMenuItem();
+        itmSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Añadir o Modificar Colaboladores");
         setBackground(new java.awt.Color(0, 0, 51));
-        setPreferredSize(new java.awt.Dimension(512, 400));
+        setPreferredSize(new java.awt.Dimension(511, 473));
         getContentPane().setLayout(null);
 
         jScrollPane1.setViewportView(nombrePanelTexto);
@@ -112,6 +116,14 @@ public class Colaborador extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane4);
         jScrollPane4.setBounds(230, 230, 220, 30);
+
+        BuscarColaboradorComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jean Carlo Alfaro Campos", "Daniela Solís Calderón", "Melvin Orozco Aguilar" }));
+        BuscarColaboradorComboBox.setToolTipText("");
+        BuscarColaboradorComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarColaboradorComboBoxActionPerformed(evt);
+            }
+        });
         getContentPane().add(BuscarColaboradorComboBox);
         BuscarColaboradorComboBox.setBounds(120, 70, 249, 30);
 
@@ -147,6 +159,46 @@ public class Colaborador extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 0, 510, 480);
 
+        jMenuBar.setPreferredSize(new java.awt.Dimension(49, 25));
+
+        Matricular.setText("Archivo");
+        Matricular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MatricularActionPerformed(evt);
+            }
+        });
+
+        itmInicio.setText("Menú Principal");
+        itmInicio.setActionCommand("");
+        itmInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmInicioMouseClicked(evt);
+            }
+        });
+        itmInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmInicioActionPerformed(evt);
+            }
+        });
+        Matricular.add(itmInicio);
+
+        itmSalir.setText("Salir");
+        itmSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmSalirMouseClicked(evt);
+            }
+        });
+        itmSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmSalirActionPerformed(evt);
+            }
+        });
+        Matricular.add(itmSalir);
+
+        jMenuBar.add(Matricular);
+
+        setJMenuBar(jMenuBar);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
@@ -156,6 +208,7 @@ public class Colaborador extends javax.swing.JFrame {
         // TODO add your handling code here:
         EliminarColaborador ec = new EliminarColaborador();
         ec.setVisible(true);
+        dispose();
     }//GEN-LAST:event_opcionesAvanzadasBotonActionPerformed
 
     private void guardarColaboradorBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarColaboradorBotonActionPerformed
@@ -174,17 +227,73 @@ public class Colaborador extends javax.swing.JFrame {
             }
             else {
                 //llamar al método que guarde los datos en la BD (paquete controlador Controlador.java)
-                System.out.println("Guarde");
+                nombrePanelTexto.setText(" ");
+                ApellidoPanelTexto.setText(" ");
+                Apellido2PanelTexto.setText(" ");
+                CorreoPanelTexto.setText(" ");
+                JOptionPane.showMessageDialog(this, "El colaborador fue registrado con éxito");  
             }
-        }
-                                               
-
-        
+        }                                                       
     }//GEN-LAST:event_guardarColaboradorBotonActionPerformed
 
     private void TipoColaboradorComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoColaboradorComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TipoColaboradorComboBoxActionPerformed
+
+    private void BuscarColaboradorComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarColaboradorComboBoxActionPerformed
+        // TODO add your handling code here:
+        validaciones validar = new validaciones();
+         if(((String) BuscarColaboradorComboBox.getSelectedItem()).equals("Jean Carlo Alfaro Campos")){
+            nombrePanelTexto.setText("Jean Carlo");
+            ApellidoPanelTexto.setText("Alfaro");
+            Apellido2PanelTexto.setText("Campos");
+            CorreoPanelTexto.setText("jcalfaro@gmail.com");            
+        }
+        if(((String) BuscarColaboradorComboBox.getSelectedItem()).equals("Daniela Solís Calderón")){
+            nombrePanelTexto.setText("Daniela");
+            ApellidoPanelTexto.setText("Solís");
+            Apellido2PanelTexto.setText("Calderón");
+            CorreoPanelTexto.setText("danisc25@hotmail.com"); 
+        }
+        if(((String) BuscarColaboradorComboBox.getSelectedItem()).equals("Melvin Orozco Aguilar")){
+            nombrePanelTexto.setText("Melvin Orozco Aguilar");
+            ApellidoPanelTexto.setText("Orozco");
+            Apellido2PanelTexto.setText("Aguilar");
+            CorreoPanelTexto.setText("melvinorozco57@yahoo.es"); 
+        }
+    }//GEN-LAST:event_BuscarColaboradorComboBoxActionPerformed
+
+    private void itmInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmInicioMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_itmInicioMouseClicked
+
+    private void itmInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmInicioActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+
+        dispose();
+
+    }//GEN-LAST:event_itmInicioActionPerformed
+
+    private void itmSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmSalirMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_itmSalirMouseClicked
+
+    private void itmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_itmSalirActionPerformed
+
+    private void MatricularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MatricularActionPerformed
+        // TODO add your handling code here:
+
+        Matricular matricular = new Matricular();
+        matricular.setVisible(true);
+        System.out.println("estoy aquí");
+    }//GEN-LAST:event_MatricularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,14 +353,18 @@ public class Colaborador extends javax.swing.JFrame {
     private javax.swing.JTextPane ApellidoPanelTexto;
     private javax.swing.JComboBox BuscarColaboradorComboBox;
     private javax.swing.JTextPane CorreoPanelTexto;
+    private javax.swing.JMenu Matricular;
     private javax.swing.JComboBox TipoColaboradorComboBox;
     private javax.swing.JButton guardarColaboradorBoton;
+    private javax.swing.JMenuItem itmInicio;
+    private javax.swing.JMenuItem itmSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

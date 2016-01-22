@@ -107,8 +107,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
             Matricular matricular = new Matricular();
             matricular.setVisible(true);
-            dispose();
-            System.out.println("estoy aquí");          
+            dispose();                     
     }//GEN-LAST:event_MatricularMouseClicked
 
     private void CursosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CursosMouseClicked
@@ -122,6 +121,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         //listar los colaboradores existentes
+         dispose();
         Controlador listaColaboradores = new Controlador();        
         
         Colaborador colaborador = new Colaborador();
@@ -129,7 +129,7 @@ public class Menu extends javax.swing.JFrame {
       
         colaborador.setColaborador(listaColaboradores.listarColaboradores());//enviar la lista de colaboradores        
         
-        
+       
     }//GEN-LAST:event_ColaboladoresMouseClicked
 
     /**
