@@ -56,7 +56,13 @@ public class Matricular extends javax.swing.JFrame {
         btnMatricualar = new javax.swing.JButton();
         btnOpcionesAvanzadas = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        btnMatricular = new javax.swing.JLabel();
+        btnInicio = new javax.swing.JButton();
+        lblCursoDisponible = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        lblMatricular = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Matricular Estudiante");
@@ -65,20 +71,20 @@ public class Matricular extends javax.swing.JFrame {
 
         lblNombre.setText("Primer Apellido");
         getContentPane().add(lblNombre);
-        lblNombre.setBounds(260, 140, 170, 14);
+        lblNombre.setBounds(280, 140, 170, 14);
         lblNombre.getAccessibleContext().setAccessibleName("Nombre");
 
         lblApellido1.setText("Segundo Apellido");
         getContentPane().add(lblApellido1);
-        lblApellido1.setBounds(490, 140, 180, 14);
+        lblApellido1.setBounds(510, 140, 180, 14);
 
         lblApellido2.setText("Nombre");
         getContentPane().add(lblApellido2);
-        lblApellido2.setBounds(20, 140, 180, 14);
+        lblApellido2.setBounds(40, 140, 180, 14);
 
         lblBuscar.setText("Buscar Estudiante");
         getContentPane().add(lblBuscar);
-        lblBuscar.setBounds(450, 10, 180, 14);
+        lblBuscar.setBounds(280, 10, 180, 14);
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +92,7 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNombre);
-        txtNombre.setBounds(10, 170, 180, 30);
+        txtNombre.setBounds(40, 170, 180, 30);
 
         txtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +100,7 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtBuscar);
-        txtBuscar.setBounds(450, 40, 180, 30);
+        txtBuscar.setBounds(280, 40, 180, 30);
 
         txtApellido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +108,7 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtApellido1);
-        txtApellido1.setBounds(250, 170, 180, 30);
+        txtApellido1.setBounds(270, 170, 180, 30);
 
         txtApellido2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,11 +116,11 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtApellido2);
-        txtApellido2.setBounds(490, 170, 180, 30);
+        txtApellido2.setBounds(510, 170, 180, 30);
 
         lblCorreo.setText("Correo");
         getContentPane().add(lblCorreo);
-        lblCorreo.setBounds(110, 230, 180, 14);
+        lblCorreo.setBounds(60, 230, 180, 14);
 
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,11 +128,11 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtCorreo);
-        txtCorreo.setBounds(110, 250, 180, 30);
+        txtCorreo.setBounds(60, 250, 180, 30);
 
         lblCedula.setText("Cédula");
         getContentPane().add(lblCedula);
-        lblCedula.setBounds(400, 230, 180, 14);
+        lblCedula.setBounds(320, 230, 180, 14);
 
         txtCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,11 +140,11 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtCedula);
-        txtCedula.setBounds(400, 250, 180, 30);
+        txtCedula.setBounds(320, 250, 180, 30);
 
         lblTelefono1.setText("Teléfono Principal");
         getContentPane().add(lblTelefono1);
-        lblTelefono1.setBounds(110, 300, 180, 14);
+        lblTelefono1.setBounds(60, 300, 180, 14);
 
         txtTelefono1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,11 +152,11 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtTelefono1);
-        txtTelefono1.setBounds(110, 330, 180, 30);
+        txtTelefono1.setBounds(60, 330, 180, 30);
 
         lblTelefono2.setText("Teléfono Secundario");
         getContentPane().add(lblTelefono2);
-        lblTelefono2.setBounds(400, 300, 180, 14);
+        lblTelefono2.setBounds(320, 300, 180, 14);
 
         txtTelefono2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +164,7 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtTelefono2);
-        txtTelefono2.setBounds(400, 330, 180, 30);
+        txtTelefono2.setBounds(320, 330, 180, 30);
 
         lblDatosPersonales.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblDatosPersonales.setText("Datos Personales");
@@ -172,7 +178,7 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnMatricualar);
-        btnMatricualar.setBounds(410, 390, 170, 30);
+        btnMatricualar.setBounds(330, 390, 170, 30);
 
         btnOpcionesAvanzadas.setText("Opciones Avanzadas");
         btnOpcionesAvanzadas.addActionListener(new java.awt.event.ActionListener() {
@@ -181,14 +187,63 @@ public class Matricular extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnOpcionesAvanzadas);
-        btnOpcionesAvanzadas.setBounds(110, 390, 190, 30);
+        btnOpcionesAvanzadas.setBounds(50, 390, 190, 30);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(0, 118, 740, 2);
 
-        btnMatricular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.jpg"))); // NOI18N
-        btnMatricular.setText("jLabel4");
-        getContentPane().add(btnMatricular);
-        btnMatricular.setBounds(0, -70, 740, 660);
+        btnInicio.setText("Inicio");
+        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInicioMouseClicked(evt);
+            }
+        });
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnInicio);
+        btnInicio.setBounds(640, 400, 73, 23);
+
+        lblCursoDisponible.setText("Cursos Disponibles");
+        getContentPane().add(lblCursoDisponible);
+        lblCursoDisponible.setBounds(530, 230, 180, 14);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(530, 250, 180, 30);
+
+        jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(330, 80, 73, 23);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(540, 40, 150, 30);
+
+        jLabel1.setText("Resultados");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(540, 10, 80, 20);
+
+        lblMatricular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.jpg"))); // NOI18N
+        lblMatricular.setText("jLabel4");
+        getContentPane().add(lblMatricular);
+        lblMatricular.setBounds(0, -70, 740, 660);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -260,6 +315,31 @@ public class Matricular extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnMatricualarActionPerformed
 
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInicioActionPerformed
+
+    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
+        // TODO add your handling code here:
+        
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_btnInicioMouseClicked
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -299,16 +379,22 @@ public class Matricular extends javax.swing.JFrame {
     boolean resultadoEmail;
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnMatricualar;
-    private javax.swing.JLabel btnMatricular;
     private javax.swing.JButton btnOpcionesAvanzadas;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblApellido1;
     private javax.swing.JLabel lblApellido2;
     private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblCursoDisponible;
     private javax.swing.JLabel lblDatosPersonales;
+    private javax.swing.JLabel lblMatricular;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTelefono1;
     private javax.swing.JLabel lblTelefono2;

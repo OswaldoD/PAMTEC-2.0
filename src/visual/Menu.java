@@ -105,6 +105,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
             Matricular matricular = new Matricular();
             matricular.setVisible(true);
+            dispose();
             System.out.println("estoy aquí");          
     }//GEN-LAST:event_MatricularMouseClicked
 
