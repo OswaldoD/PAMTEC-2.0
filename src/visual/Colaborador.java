@@ -5,6 +5,9 @@
  */
 package visual;
 
+import controlador.validaciones;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sephi
@@ -148,6 +151,24 @@ public class Colaborador extends javax.swing.JFrame {
 
     private void guardarColaboradorBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarColaboradorBotonActionPerformed
         // TODO add your handling code here:
+        
+        validaciones validar = new validaciones();
+                //Mediante este ciclo se valida que no existan campos te texto vacíos
+        if(validar.esVacio(nombrePanelTexto.getText())==true || validar.esVacio(ApellidoPanelTexto.getText())==true || 
+                         validar.esVacio(Apellido2PanelTexto.getText())==true || validar.esVacio(CorreoPanelTexto.getText())==true){
+            
+            JOptionPane.showMessageDialog(this, "Debe completar todos los campos solicitados");            
+        }
+        else{
+            if(validar.email(CorreoPanelTexto.getText())==false){//formato correo inválido
+                JOptionPane.showMessageDialog(this, "Ingrese un formato de correo válido");            
+            }
+            else {
+                //llamar al método que guarde los datos en la BD (paquete controlador Controlador.java)
+            }
+        }
+                                               
+
         
     }//GEN-LAST:event_guardarColaboradorBotonActionPerformed
 
