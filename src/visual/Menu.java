@@ -5,6 +5,7 @@
  */
 package visual;
 
+import controlador.Controlador;
 import java.awt.PopupMenu;
 import javax.swing.JFrame;
 
@@ -119,8 +120,15 @@ public class Menu extends javax.swing.JFrame {
 
     private void ColaboladoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ColaboladoresMouseClicked
         // TODO add your handling code here:
+        
+        //listar los colaboradores existentes
+        Controlador listaColaboradores = new Controlador();        
+        
         Colaborador colaborador = new Colaborador();
         colaborador.setVisible(true);
+      
+        colaborador.setColaborador(listaColaboradores.listarColaboradores());//enviar la lista de colaboradores        
+        
         
     }//GEN-LAST:event_ColaboladoresMouseClicked
 

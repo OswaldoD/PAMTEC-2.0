@@ -5,6 +5,10 @@
  */
 package visual;
 
+import controlador.validaciones;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sephi
@@ -15,11 +19,13 @@ public class Colaborador extends javax.swing.JFrame {
     /**
      * Creates new form ColaboradorFrame
      */
-    private String[] colaborador = {};
+    private static ArrayList<String> colaborador;
     private String[] tipo = {};
     
     public Colaborador() {
         initComponents();
+        colaborador = new ArrayList<String>();
+        
     }
 
     /**
@@ -106,12 +112,16 @@ public class Colaborador extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane4);
         jScrollPane4.setBounds(230, 230, 220, 30);
-
-        BuscarColaboradorComboBox.setModel(new javax.swing.DefaultComboBoxModel(colaborador));
         getContentPane().add(BuscarColaboradorComboBox);
         BuscarColaboradorComboBox.setBounds(120, 70, 249, 30);
 
-        TipoColaboradorComboBox.setModel(new javax.swing.DefaultComboBoxModel(tipo));
+        TipoColaboradorComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Asistente", "Profesor" }));
+        TipoColaboradorComboBox.setToolTipText("");
+        TipoColaboradorComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipoColaboradorComboBoxActionPerformed(evt);
+            }
+        });
         getContentPane().add(TipoColaboradorComboBox);
         TipoColaboradorComboBox.setBounds(230, 280, 220, 30);
 
@@ -139,6 +149,8 @@ public class Colaborador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    
 
     private void opcionesAvanzadasBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesAvanzadasBotonActionPerformed
         // TODO add your handling code here:
@@ -149,7 +161,30 @@ public class Colaborador extends javax.swing.JFrame {
     private void guardarColaboradorBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarColaboradorBotonActionPerformed
         // TODO add your handling code here:
         
+        validaciones validar = new validaciones();
+        //Mediante este ciclo se valida que no existan campos te texto vacíos
+        if(validar.esVacio(nombrePanelTexto.getText())==true || validar.esVacio(ApellidoPanelTexto.getText())==true || 
+                         validar.esVacio(Apellido2PanelTexto.getText())==true || validar.esVacio(CorreoPanelTexto.getText())==true){
+            
+            JOptionPane.showMessageDialog(this, "Debe completar todos los campos solicitados");            
+        }
+        else{
+            if(validar.email(CorreoPanelTexto.getText())==false){//formato correo inválido
+                JOptionPane.showMessageDialog(this, "Ingrese un formato de correo válido");            
+            }
+            else {
+                //llamar al método que guarde los datos en la BD (paquete controlador Controlador.java)
+                System.out.println("Guarde");
+            }
+        }
+                                               
+
+        
     }//GEN-LAST:event_guardarColaboradorBotonActionPerformed
+
+    private void TipoColaboradorComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoColaboradorComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TipoColaboradorComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,7 +213,6 @@ public class Colaborador extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -187,33 +221,23 @@ public class Colaborador extends javax.swing.JFrame {
         });
     }
     
-    public void setColaborador(String[] pC)
+    public void setColaborador(ArrayList<String> pC)
     {
         colaborador=pC;
+        addBuscarColaborador();
     }
     
-    public void setTipo(String[] pT)
-    {
-        tipo=pT;
-    }
     
     public void addBuscarColaborador()
     {
+        System.out.println("colaboradores: "+colaborador.size());
         int i = 0;
-        while(colaborador[i]!=null)
+        while(colaborador.get(i)!=null)
         {
-            BuscarColaboradorComboBox.addItem(colaborador[i++]);
+            BuscarColaboradorComboBox.addItem(colaborador.get(i++));
         }
     }
     
-    public void addTipoColaborador()
-    {
-        int i = 0;
-        while(tipo[i]!=null)
-        {
-            TipoColaboradorComboBox.addItem(tipo[i++]);
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextPane Apellido2PanelTexto;
