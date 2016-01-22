@@ -40,7 +40,8 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ContraseñaPanelTexto = new javax.swing.JPasswordField();
-        lblInicioSesion = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        lblTitulo = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,7 +52,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(27, 27, 86));
         jPanel1.setForeground(new java.awt.Color(0, 0, 51));
 
-        btnIniciarSesion.setText("Iniciar Sección");
+        btnIniciarSesion.setText("Iniciar Sesión");
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionActionPerformed(evt);
@@ -102,11 +103,14 @@ public class Login extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(236, 181, 252, 180);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(0, 130, 740, 20);
 
-        lblInicioSesion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblInicioSesion.setText("Inicio de Sesión");
-        getContentPane().add(lblInicioSesion);
-        lblInicioSesion.setBounds(290, 140, 260, 30);
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("Inicio de Sesión");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(0, 40, 740, 100);
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.jpg"))); // NOI18N
         lblFondo.setText("jLabel4");
@@ -197,7 +201,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblFondo;
-    private javax.swing.JLabel lblInicioSesion;
+    private javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,6 +35,8 @@ public class Curso extends javax.swing.JFrame {
         btnMatricularCurso = new javax.swing.JButton();
         ScrollTablaCursos = new javax.swing.JScrollPane();
         tablaCursos = new javax.swing.JTable();
+        jSeparator1 = new javax.swing.JSeparator();
+        lblTitulo = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         Matricular = new javax.swing.JMenu();
@@ -81,6 +83,14 @@ public class Curso extends javax.swing.JFrame {
 
         getContentPane().add(ScrollTablaCursos);
         ScrollTablaCursos.setBounds(110, 160, 540, 80);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(0, 102, 740, 10);
+
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("Cursos PAMTEC");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(0, 0, 740, 100);
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo.jpg"))); // NOI18N
         lblFondo.setText("jLabel4");
@@ -218,7 +228,9 @@ public class Curso extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmInicio;
     private javax.swing.JMenuItem itmSalir;
     private javax.swing.JMenuBar jMenuBar;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tablaCursos;
     // End of variables declaration//GEN-END:variables
 }
