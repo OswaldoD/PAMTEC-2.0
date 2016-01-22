@@ -20,6 +20,11 @@ public class Matricular extends javax.swing.JFrame {
      */
     public Matricular() {
         initComponents();
+        
+        setResizable(false);
+        setBounds(150, 100, 743, 478);
+        
+        // [743, 478]
     }
 
     /**

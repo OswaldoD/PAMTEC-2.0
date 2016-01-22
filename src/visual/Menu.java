@@ -21,6 +21,10 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        
+        setResizable(false);
+        setBounds(150, 100, 750, 600);
+        
     }
 
     /**
