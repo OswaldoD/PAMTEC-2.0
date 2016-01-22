@@ -6,6 +6,7 @@
 package visual;
 
 import controlador.validaciones;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Sephi
@@ -35,7 +36,6 @@ public class EliminarCurso extends javax.swing.JFrame {
         codigoCursoPanelTexto = new javax.swing.JTextPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         numeroGrupoCursoPanelTexto = new javax.swing.JTextPane();
-        consultarBoton = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         lblFondo = new javax.swing.JLabel();
@@ -60,7 +60,7 @@ public class EliminarCurso extends javax.swing.JFrame {
             }
         });
         getContentPane().add(EliminarBoton);
-        EliminarBoton.setBounds(140, 160, 90, 23);
+        EliminarBoton.setBounds(80, 160, 90, 23);
 
         jScrollPane1.setViewportView(codigoCursoPanelTexto);
 
@@ -71,15 +71,6 @@ public class EliminarCurso extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(120, 110, 100, 22);
-
-        consultarBoton.setText("Consultar");
-        consultarBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultarBotonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(consultarBoton);
-        consultarBoton.setBounds(20, 160, 90, 23);
 
         lblTitulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -99,19 +90,19 @@ public class EliminarCurso extends javax.swing.JFrame {
 
     private void EliminarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarBotonActionPerformed
         // TODO add your handling code here:
-        validaciones v = new validaciones();
-        if(!v.esVacio(codigoCursoPanelTexto.getText().trim()))
-        {
-        } else {
+         validaciones validar = new validaciones();
+         
+         //Validar que los campos no estén vaciós
+        if(validar.esVacio(codigoCursoPanelTexto.getText())==true ||validar.esVacio(numeroGrupoCursoPanelTexto.getText())==true ){
             
+            JOptionPane.showMessageDialog(this, "Debe completar todos los campos solicitados");            
+        }
+        else{
+            codigoCursoPanelTexto.setText(" ");
+            numeroGrupoCursoPanelTexto.setText(" ");
+            JOptionPane.showMessageDialog(this, "El curso fue eliminado");
         }
     }//GEN-LAST:event_EliminarBotonActionPerformed
-
-    private void consultarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBotonActionPerformed
-        // TODO add your handling code here:
-        Informacion in = new Informacion();
-        in.setVisible(true);
-    }//GEN-LAST:event_consultarBotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,7 +142,6 @@ public class EliminarCurso extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EliminarBoton;
     private javax.swing.JTextPane codigoCursoPanelTexto;
-    private javax.swing.JButton consultarBoton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;

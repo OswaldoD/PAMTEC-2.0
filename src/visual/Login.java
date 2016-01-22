@@ -43,6 +43,7 @@ public class Login extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         lblTitulo = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Matrícula PAMTEC");
@@ -117,6 +118,8 @@ public class Login extends javax.swing.JFrame {
         lblFondo.setRequestFocusEnabled(false);
         getContentPane().add(lblFondo);
         lblFondo.setBounds(0, 0, 740, 580);
+        getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(570, 470, 50, 10);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -202,6 +205,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables

@@ -38,6 +38,7 @@ public class Curso extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         lblTitulo = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
         jMenuBar = new javax.swing.JMenuBar();
         Matricular = new javax.swing.JMenu();
         itmInicio = new javax.swing.JMenuItem();
@@ -96,6 +97,8 @@ public class Curso extends javax.swing.JFrame {
         lblFondo.setText("jLabel4");
         getContentPane().add(lblFondo);
         lblFondo.setBounds(0, -60, 740, 620);
+        getContentPane().add(jSeparator2);
+        jSeparator2.setBounds(0, 0, 50, 10);
 
         jMenuBar.setPreferredSize(new java.awt.Dimension(49, 25));
 
@@ -229,6 +232,7 @@ public class Curso extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmSalir;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tablaCursos;
