@@ -59,6 +59,10 @@ public class CrearCurso extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jMenuBar = new javax.swing.JMenuBar();
+        Archivo = new javax.swing.JMenu();
+        itmInicio = new javax.swing.JMenuItem();
+        itmSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(750, 553));
@@ -71,7 +75,7 @@ public class CrearCurso extends javax.swing.JFrame {
             }
         });
         getContentPane().add(GuardarBoton);
-        GuardarBoton.setBounds(290, 460, 110, 30);
+        GuardarBoton.setBounds(290, 440, 110, 30);
 
         OpcionesAvanzadasBoton.setText("Opciones Avanzadas");
         OpcionesAvanzadasBoton.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +84,7 @@ public class CrearCurso extends javax.swing.JFrame {
             }
         });
         getContentPane().add(OpcionesAvanzadasBoton);
-        OpcionesAvanzadasBoton.setBounds(70, 460, 160, 30);
+        OpcionesAvanzadasBoton.setBounds(70, 440, 160, 30);
 
         jScrollPane4.setViewportView(numeroGrupoPanelTexto);
 
@@ -146,7 +150,7 @@ public class CrearCurso extends javax.swing.JFrame {
         jScrollPane6.setViewportView(descripcionCursoPanelTexto);
 
         getContentPane().add(jScrollPane6);
-        jScrollPane6.setBounds(70, 310, 617, 133);
+        jScrollPane6.setBounds(70, 310, 617, 120);
 
         jLabel2.setText("Código:");
         getContentPane().add(jLabel2);
@@ -179,6 +183,28 @@ public class CrearCurso extends javax.swing.JFrame {
         getContentPane().add(jLabel11);
         jLabel11.setBounds(0, 0, 740, 550);
 
+        Archivo.setText("Archivo");
+
+        itmInicio.setText("Menú Principal");
+        itmInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmInicioActionPerformed(evt);
+            }
+        });
+        Archivo.add(itmInicio);
+
+        itmSalir.setText("Salir");
+        itmSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmSalirActionPerformed(evt);
+            }
+        });
+        Archivo.add(itmSalir);
+
+        jMenuBar.add(Archivo);
+
+        setJMenuBar(jMenuBar);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -193,6 +219,19 @@ public class CrearCurso extends javax.swing.JFrame {
     private void BuscarCursoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarCursoComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BuscarCursoComboBoxActionPerformed
+
+    private void itmInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmInicioActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_itmInicioActionPerformed
+
+    private void itmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_itmSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,6 +270,7 @@ public class CrearCurso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Archivo;
     private javax.swing.JComboBox BuscarCursoComboBox;
     private javax.swing.JTextPane CodigoCursoPanelTexto;
     private javax.swing.JButton GuardarBoton;
@@ -239,6 +279,8 @@ public class CrearCurso extends javax.swing.JFrame {
     private javax.swing.JTextPane asistenteCorreoPanelTexto;
     private javax.swing.JTextPane cupoPanelTexto;
     private javax.swing.JTextArea descripcionCursoPanelTexto;
+    private javax.swing.JMenuItem itmInicio;
+    private javax.swing.JMenuItem itmSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -250,6 +292,7 @@ public class CrearCurso extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;

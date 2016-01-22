@@ -18,6 +18,8 @@ public class Curso extends javax.swing.JFrame {
      */
     public Curso() {
         initComponents();
+        setBounds(150,100,750,600);
+        setResizable(false);
     }
 
     /**
@@ -34,11 +36,10 @@ public class Curso extends javax.swing.JFrame {
         ScrollTablaCursos = new javax.swing.JScrollPane();
         tablaCursos = new javax.swing.JTable();
         lblFondo = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuBar = new javax.swing.JMenuBar();
         Matricular = new javax.swing.JMenu();
-        Cursos = new javax.swing.JMenu();
-        Colaboladores = new javax.swing.JMenu();
-        Salir = new javax.swing.JMenu();
+        itmInicio = new javax.swing.JMenuItem();
+        itmSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(750, 600));
@@ -51,11 +52,11 @@ public class Curso extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCrearCurso);
-        btnCrearCurso.setBounds(570, 43, 140, 30);
+        btnCrearCurso.setBounds(180, 310, 150, 30);
 
-        btnMatricularCurso.setText("Matricular Curso");
+        btnMatricularCurso.setText("Exportar Datos a CSV");
         getContentPane().add(btnMatricularCurso);
-        btnMatricularCurso.setBounds(100, 390, 150, 30);
+        btnMatricularCurso.setBounds(455, 310, 150, 30);
 
         tablaCursos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,24 +87,46 @@ public class Curso extends javax.swing.JFrame {
         getContentPane().add(lblFondo);
         lblFondo.setBounds(0, -60, 740, 620);
 
-        Matricular.setText("Matricular");
+        jMenuBar.setPreferredSize(new java.awt.Dimension(49, 25));
+
+        Matricular.setText("Archivo");
         Matricular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MatricularActionPerformed(evt);
             }
         });
-        jMenuBar1.add(Matricular);
 
-        Cursos.setText("Cursos");
-        jMenuBar1.add(Cursos);
+        itmInicio.setText("Menú Principal");
+        itmInicio.setActionCommand("");
+        itmInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmInicioMouseClicked(evt);
+            }
+        });
+        itmInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmInicioActionPerformed(evt);
+            }
+        });
+        Matricular.add(itmInicio);
+        itmInicio.getAccessibleContext().setAccessibleDescription("");
 
-        Colaboladores.setText("Colaboradores");
-        jMenuBar1.add(Colaboladores);
+        itmSalir.setText("Salir");
+        itmSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itmSalirMouseClicked(evt);
+            }
+        });
+        itmSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmSalirActionPerformed(evt);
+            }
+        });
+        Matricular.add(itmSalir);
 
-        Salir.setText("Salir");
-        jMenuBar1.add(Salir);
+        jMenuBar.add(Matricular);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBar);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -123,6 +146,33 @@ public class Curso extends javax.swing.JFrame {
         crearCurso.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnCrearCursoActionPerformed
+
+    private void itmInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmInicioActionPerformed
+        // TODO add your handling code here:
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        
+        dispose();
+        
+    }//GEN-LAST:event_itmInicioActionPerformed
+
+    private void itmInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmInicioMouseClicked
+        // TODO add your handling code here:
+        
+
+        
+        
+    }//GEN-LAST:event_itmInicioMouseClicked
+
+    private void itmSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itmSalirMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_itmSalirMouseClicked
+
+    private void itmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_itmSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,14 +211,13 @@ public class Curso extends javax.swing.JFrame {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Colaboladores;
-    private javax.swing.JMenu Cursos;
     private javax.swing.JMenu Matricular;
-    private javax.swing.JMenu Salir;
     private javax.swing.JScrollPane ScrollTablaCursos;
     private javax.swing.JButton btnCrearCurso;
     private javax.swing.JButton btnMatricularCurso;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem itmInicio;
+    private javax.swing.JMenuItem itmSalir;
+    private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JTable tablaCursos;
     // End of variables declaration//GEN-END:variables

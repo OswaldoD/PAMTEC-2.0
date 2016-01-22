@@ -56,6 +56,8 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(lblFondo);
         lblFondo.setBounds(0, -50, 740, 600);
 
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(224, 25));
+
         Matricular.setText("Matricular");
         Matricular.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -112,6 +114,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         Curso curso = new Curso();
         curso.setVisible(true);
+        dispose();
     }//GEN-LAST:event_CursosMouseClicked
 
     private void ColaboladoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ColaboladoresMouseClicked
